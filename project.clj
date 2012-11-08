@@ -1,4 +1,4 @@
-(defproject roul "0.1.0"
+(defproject roul "0.2.0"
   :license {:name "MIT/X11"}
   :dependencies [[org.clojure/clojure "1.3.0"]]
   :plugins [[sjl/lein2-generative "0.1.4.2"]]

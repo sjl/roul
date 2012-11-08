@@ -29,7 +29,7 @@ Installation
 
 You need Leiningen 2 to use this.  Sorry.
 
-    [roul "0.1.0"]
+    [roul "0.2.0"]
 
 Usage
 -----

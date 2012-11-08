@@ -77,3 +77,70 @@ specific.
     ; Returns cats roughly twice as often as boots.
     (rr/rand-nth-weighted [[:boots 14]
                            [:cats 28]])
+
+### rand-bool
+
+    :::clojure
+    (rand-bool)         ; return true or false
+    (rand-bool percent) ; return true the given percent of the time, false the rest
+
+Returns `true` or `false` randomly.
+
+`percent` can be an integer or a float like `20` or `39.2`.  If given, `true`
+will be returned that percent of the time (and `false` the rest).
+
+If percent is not given it defaults to `50` (an equal chance for `true` and
+`false`).
+
+### rand-gaussian
+
+    :::clojure
+    (rand-gaussian)
+    (rand-gaussian mean standard-deviation)
+    (rand-gaussian mean standard-deviation upper-bound lower-bound)
+
+Return a random float taken from a Gaussian distribution with the given mean and
+standard deviation.
+
+`mean` defaults to 0.
+
+`standard-deviation` defaults to 1.
+
+A lower and upper bound can be specified if desired, which will clamp the output
+of this function to those bounds.  Note that this clamping does NOT adjust the
+distribution, so if you clamp too tightly you'll get a disproportionate number
+of the boundary values.  It's just here to give you a way to prevent garbage
+values.
+
+    :::clojure
+    ; Generate an [x, y] pair with Gaussian-distributed values.
+    ; The x value here is clamped between 0 and graph-width.
+    (let [x (rand-gaussian 100 20 0 graph-width)
+          y (rand-gaussian 200 40)]
+      ...)
+### rand-gaussian-int
+
+    :::clojure
+    (rand-gaussian)
+    (rand-gaussian mean standard-deviation)
+    (rand-gaussian mean standard-deviation upper-bound lower-bound)
+
+Return a random int taken from a Gaussian distribution with the given mean and
+standard deviation.
+
+`mean` defaults to 0.
+
+`standard-deviation` defaults to 1.
+
+A lower and upper bound can be specified if desired, which will clamp the output
+of this function to those bounds.  Note that this clamping does NOT adjust the
+distribution, so if you clamp too tightly you'll get a disproportionate number
+of the boundary values.  It's just here to give you a way to prevent garbage
+values.
+
+    :::clojure
+    ; Generate an [x, y] pair with Gaussian-distributed values.
+    ; The x value here is clamped between 0 and graph-width.
+    (let [x (rand-gaussian 100 20 0 graph-width)
+          y (rand-gaussian 200 40)]
+      ...)

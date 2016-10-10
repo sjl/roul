@@ -97,7 +97,7 @@ If percent is not given it defaults to `50` (an equal chance for `true` and
     :::clojure
     (rand-gaussian)
     (rand-gaussian mean standard-deviation)
-    (rand-gaussian mean standard-deviation upper-bound lower-bound)
+    (rand-gaussian mean standard-deviation lower-bound upper-bound)
 
 Return a random float taken from a Gaussian distribution with the given mean and
 standard deviation.
@@ -118,12 +118,13 @@ values.
     (let [x (rand-gaussian 100 20 0 graph-width)
           y (rand-gaussian 200 40)]
       ...)
+
 ### rand-gaussian-int
 
     :::clojure
     (rand-gaussian)
     (rand-gaussian mean standard-deviation)
-    (rand-gaussian mean standard-deviation upper-bound lower-bound)
+    (rand-gaussian mean standard-deviation lower-bound upper-bound)
 
 Return a random int taken from a Gaussian distribution with the given mean and
 standard deviation.
